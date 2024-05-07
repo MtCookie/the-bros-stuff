@@ -1,43 +1,80 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bros Shirts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff0000;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background-color: #0000ff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+<header>
+    <h1>Welcome to The Bros Shirts</h1>
+</header>
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+<nav>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+<section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to The Bros Shirts, where we bring style and quality together. We are passionate about shirts, sunglasses, and cars, and we aim to provide you with the best products that reflect our passion.</p>
+</section>
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+<section id="products">
+    <h2>Our Products</h2>
+    <p>Check out our latest collection of shirts, sunglasses, and accessories!</p>
+    <!-- Add images or descriptions of your products here -->
+</section>
 
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have any questions or inquiries? Feel free to reach out to us!</p>
+    <!-- Add contact information or a contact form here -->
+</section>
+
+<footer>
+    <p>&copy; 2024 The Bros Shirts. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
